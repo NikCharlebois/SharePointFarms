@@ -53,13 +53,15 @@
         }
     },
   "variables": {
+    "spFarmAccountName": "sp_farm",
+    "spSetupAccountName": "sp_setup",
     "storageAccountType": "Standard_LRS",
     "adVMSize": "Standard_A1",
     "sqlVMSize": "Standard_A2",
     "spVMSize": "Standard_A3",
-    "spassetLocation": "https://github.com/NikCharlebois/SharePointFarms/raw/BlankSPVMs/sharepoint-2016-non-ha",
-    "adAssetLocation": "https://github.com/NikCharlebois/SharePointFarms/raw/BlankSPVMs/ad-non-ha",
-    "sqlAssetLocation": "https://github.com/NikCharlebois/SharePointFarms/raw/BlankSPVMs/sql-2014-non-ha",
+    "spassetLocation": "https://github.com/NikCharlebois/SharePointFarms/raw/master/sharepoint-2016-non-ha",
+    "adAssetLocation": "https://github.com/NikCharlebois/SharePointFarms/raw/master/ad-non-ha",
+    "sqlAssetLocation": "https://github.com/NikCharlebois/SharePointFarms/raw/master/sql-2014-non-ha",
     "location": "[resourceGroup().location]",
     "vmNetworkSubnet": "10.0.0.0/24",
     "virtualNetworkAddressRange": "10.0.0.0/16",
@@ -983,10 +985,10 @@
             "value": "[parameters('adminUsername')]"
           },
           "sharePointSetupUserAccountUserName": {
-            "value": "[parameters('adminUsername')]"
+            "value": "[variables('spSetupAccountName')]"
           },
           "sharePointFarmAccountUserName": {
-            "value": "[parameters('sqlServerServiceAccountUserName')]"
+            "value": "[variables('spFarmAccountName')]"
           },
           "configDatabaseName": {
             "value": "[variables('spconfigDatabaseName')]"
