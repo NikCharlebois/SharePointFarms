@@ -55,7 +55,7 @@
   "variables": {
     "spFarmAccountName": "sp_farm",
     "spSetupAccountName": "sp_setup",
-    "storageAccountType": "Standard_LRS",
+    "storageAccountType": "Premium_LRS",
     "adVMSize": "Standard_D4s_v3",
     "sqlVMSize": "Standard_D4s_v3",
     "spVMSize": "Standard_D4s_v3",
