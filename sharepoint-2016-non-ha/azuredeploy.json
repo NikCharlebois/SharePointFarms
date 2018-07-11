@@ -61,7 +61,7 @@
     "spVMSize": "Standard_D4s_v3",
     "spassetLocation": "https://raw.githubusercontent.com/NikCharlebois/SharePointFarms/BlankSPVMs/sharepoint-2016-non-ha",
     "adAssetLocation": "https://raw.githubusercontent.com/NikCharlebois/SharePointFarms/BlankSPVMs/ad-non-ha",
-    "sqlAssetLocation": "https://raw.githubusercontent.com/NikCharlebois/SharePointFarms/BlankSPVMs/sql-2014-non-ha",
+    "sqlAssetLocation": "https://raw.githubusercontent.com/NikCharlebois/SharePointFarms/BlankSPVMs/sql-2017-non-ha",
     "location": "[resourceGroup().location]",
     "vmNetworkSubnet": "10.0.0.0/24",
     "virtualNetworkAddressRange": "10.0.0.0/16",
