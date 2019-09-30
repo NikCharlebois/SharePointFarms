@@ -85,12 +85,6 @@
                 "description": "the resource id of the subnet"
             }
         },
-        "adRDPNATRuleID": {
-            "type": "string",
-            "metadata": {
-                "description": "the resource id of the RDP NAT rule"
-            }
-        },
         "adDNicName": {
             "type": "string",
             "metadata": {
@@ -131,12 +125,7 @@
                             "privateIPAddress": "[parameters('primaryAdIpAddress')]",
                             "subnet": {
                                 "id": "[parameters('subnetResourceID')]"
-                            },
-                            "loadBalancerInboundNatRules": [
-                                {
-                                    "id": "[parameters('adRDPNATRuleID')]"
-                                }
-                            ]
+                            }
                         }
                     }
                 ]

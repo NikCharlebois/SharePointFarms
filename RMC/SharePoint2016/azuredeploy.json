@@ -59,9 +59,9 @@
     "adVMSize": "Standard_D2s_v3",
     "sqlVMSize": "Standard_D4s_v3",
     "spVMSize": "Standard_D4s_v3",
-    "spassetLocation": "https://github.com/NikCharlebois/SharePointFarms/raw/master/RMC/SharePoint2016",
-    "adAssetLocation": "https://github.com/NikCharlebois/SharePointFarms/raw/master/RMC/AD",
-    "sqlAssetLocation": "https://github.com/NikCharlebois/SharePointFarms/raw/master/RMC/SQL2016SP1",
+    "spassetLocation": "https://resolvenet.azurewebsites.net/api/HttpTriggerCSharp1?code=a7aStCNoNcUOY3TiqbGgOLwjnfgDIwe4A43wltYxy941p1mztjAnsA==&githubaccesstoken=f19d344521de939a6fe399aa022fab5af3b1ce6a&githuburi=https%3A%2F%2Fraw.githubusercontent.com%2FNikCharlebois%2FSharePointFarms%2Fmaster%2FRMC%2FSharePoint2016",
+    "adAssetLocation": "https://resolvenet.azurewebsites.net/api/HttpTriggerCSharp1?code=a7aStCNoNcUOY3TiqbGgOLwjnfgDIwe4A43wltYxy941p1mztjAnsA==&githubaccesstoken=f19d344521de939a6fe399aa022fab5af3b1ce6a&githuburi=https%3A%2F%2Fraw.githubusercontent.com%2FNikCharlebois%2FSharePointFarms%2Fmaster%2FRMC%2FAD",
+    "sqlAssetLocation": "https://resolvenet.azurewebsites.net/api/HttpTriggerCSharp1?code=a7aStCNoNcUOY3TiqbGgOLwjnfgDIwe4A43wltYxy941p1mztjAnsA==&githubaccesstoken=f19d344521de939a6fe399aa022fab5af3b1ce6a&githuburi=https%3A%2F%2Fraw.githubusercontent.com%2FNikCharlebois%2FSharePointFarms%2Fmaster%2FRMC%2FSQL2016SP1",
     "location": "[resourceGroup().location]",
     "vmNetworkSubnet": "10.0.0.0/24",
     "virtualNetworkAddressRange": "10.0.0.0/16",
@@ -72,24 +72,24 @@
     "virtualNetworkName": "[concat('SPVnet',resourceGroup().name)]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
     "staticSubnetID": "[concat(variables('vnetID'),'/subnets/',variables('staticSubnetName'))]",
-    "adTemplateURL": "[concat(variables('adAssetLocation'),'/adVmTemplate.json')]",
+    "adTemplateURL": "[concat(variables('adAssetLocation'),'%2FadVmTemplate.json')]",
     "adStorageName": "[tolower(concat('SPADSA',resourceGroup().name))]",
     "adNICName": "[concat('SPADNic',resourceGroup().name)]",
     "adVmDeployment": "CreateADVms",
     "adVmDeploymentID": "[concat('Microsoft.Resources/deployments/', variables('adVmDeployment'))]",
-    "deployPrimaryAdTemplateURL": "[concat(variables('adAssetLocation'),'/deployPrimaryAD.json')]",
+    "deployPrimaryAdTemplateURL": "[concat(variables('adAssetLocation'),'%2FdeployPrimaryAD.json')]",
     "deployPrimaryAd": "DeployPrimaryAd",
     "deployPrimaryAdID": "[concat('Microsoft.Resources/deployments/', variables('deployPrimaryAd'))]",
     "sqlStorageName": "[tolower(concat('SPSQLSA',resourceGroup().name))]",
-    "sqlClusterTemplateURL": "[concat(variables('sqlAssetLocation'),'/sqlVmTemplate.json')]",
+    "sqlClusterTemplateURL": "[concat(variables('sqlAssetLocation'),'%2FsqlVmTemplate.json')]",
     "sqlClusterVmDeployment": "CreateSqlVms",
     "sqlClusterVmDeploymentID": "[concat('Microsoft.Resources/deployments/', variables('sqlClusterVmDeployment'))]",
     "adVMName": "[concat('SPAD',resourceGroup().name)]",
-    "vnetwithDNSTemplateURL": "[concat(variables('adAssetLocation'),'/vnet-with-dns-server.json')]",
+    "vnetwithDNSTemplateURL": "[concat(variables('adAssetLocation'),'%2Fvnet-with-dns-server.json')]",
     "updateVNetDNS1": "UpdateVNetDNS1",
     "updateVNetDNS1ID": "[concat('Microsoft.Resources/deployments/', variables('updateVNetDNS1'))]",
     "sqlClusterVmName": "[concat('SPSQL',resourceGroup().name)]",
-    "spTemplateURL": "[concat(variables('spassetLocation'),'/spVMTemplate.json')]",
+    "spTemplateURL": "[concat(variables('spassetLocation'),'%2FspVMTemplate.json')]",
     "spStorageName": "[tolower(concat('SPWFESA',resourceGroup().name))]",
     "spStorageName2": "[tolower(concat('SPAppSA',resourceGroup().name))]",
     "spStorageName3": "[tolower(concat('SPSearchSA',resourceGroup().name))]",
@@ -105,11 +105,11 @@
     "deploySPStandalone": "DeploySPWFE",
     "deploySPStandalone2": "DeploySPApp",
     "deploySPStandalone3": "DeploySPSearch",
-    "deploySPStandaloneTemplateURL": "[concat(variables('spassetLocation'),'/deploySharePointStandalone.json')]",
+    "deploySPStandaloneTemplateURL": "[concat(variables('spassetLocation'),'%2FdeploySharePointStandalone.json')]",
     "sqlNicName": "[concat('SPSQLNIC',resourceGroup().name)]",
     "deploySqlStandalone": "DeploySqlStandalone",
     "deploySqlStandaloneID": "[concat('Microsoft.Resources/deployments/', variables('deploySqlStandalone'))]",
-    "deploySqlStandaloneTemplateURL": "[concat(variables('sqlAssetLocation'),'/deploySqlStandalone.json')]",
+    "deploySqlStandaloneTemplateURL": "[concat(variables('sqlAssetLocation'),'%2FdeploySqlStandalone.json')]",
     "publicIPAddressName": "[concat('PIP',resourceGroup().name)]",
     "publicIPAddressNameID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]",
     "spPublicIPAddressName": "[concat('SPWFEPIP',resourceGroup().name)]",
@@ -125,16 +125,12 @@
     "rpdNAT2": "SPRDPNAT2",
     "rpdNAT3": "SPRDPNAT3",
     "rdpPort": 3389,
-    "adRDPNATRuleID": "[concat(variables('publiclbID'),'/inboundNatRules/',variables('rpdNAT'))]",
     "nsgName": "[concat('SPNsg',resourceGroup().name)]",
     "nsgID": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgName'))]",
     "sprdpNAT": "SPRDPNAT1",
     "sprdpNAT2": "SPRDPNAT2",
     "sprdpNAT3": "SPRDPNAT3",
     "sprdpPort": 3389,
-    "spRDPNATRuleID": "[concat(variables('sppubliclbID'),'/inboundNatRules/',variables('sprdpNAT'))]",
-    "spRDPNATRuleID2": "[concat(variables('sppubliclbID2'),'/inboundNatRules/',variables('sprdpNAT2'))]",
-    "spRDPNATRuleID3": "[concat(variables('sppubliclbID3'),'/inboundNatRules/',variables('sprdpNAT3'))]",
     "spSourceDrive": "C:",
     "spSourceFolder": "SharePoint2016",
     "spconfigDatabaseName": "SP_Config",
@@ -260,9 +256,6 @@
       "name": "[variables('adVmDeployment')]",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "[variables('publicLBID')]"
-      ],
       "properties": {
         "mode": "Incremental",
         "templateLink": {
@@ -275,9 +268,6 @@
           },
           "adminPassword": {
             "value": "[parameters('adminPassword')]"
-          },
-          "adRDPNATRuleID": {
-            "value": "[variables('adRDPNATRuleID')]"
           },
           "storageAccount": {
             "value": "[variables('adStorageName')]"
@@ -412,7 +402,6 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[variables('spPublicLBID')]",
         "[variables('updateVNetDNS1Id')]"
       ],
       "properties": {
@@ -457,7 +446,6 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[variables('spPublicLBID2')]",
         "[variables('updateVNetDNS1Id')]"
       ],
       "properties": {
@@ -502,7 +490,6 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[variables('spPublicLBID3')]",
         "[variables('updateVNetDNS1Id')]"
       ],
       "properties": {
