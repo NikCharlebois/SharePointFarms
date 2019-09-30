@@ -59,10 +59,10 @@
         "ProductKey": {
             "type": "string"
         },
-        "sharepoint2016SourceDLLink": {
+        "sharepointSourceDLLink": {
             "type": "string",
             "metadata": {
-                "description": "Direct download link for the SharePoint 2016 trial ISO"
+                "description": "Direct download link for the SharePoint trial ISO"
             }
         },
         "primaryAdIpAddress": {
@@ -125,7 +125,7 @@
                         "InstallSourceDrive": "[parameters('sharepointInstallSourceDrive')]",
                         "InstallSourceFolderName": "[parameters('sharepointInstallSourceFolder')]",
                         "ProductKey": "[parameters('ProductKey')]",
-                        "SPDLLink": "[parameters('sharepoint2016SourceDLLink')]"
+                        "SPDLLink": "[parameters('sharepointSourceDLLink')]"
                     }
                 },
                 "protectedSettings": {

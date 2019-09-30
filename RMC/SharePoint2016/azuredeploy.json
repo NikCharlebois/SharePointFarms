@@ -49,12 +49,12 @@
             "metadata": {
                 "description": "Product key for SharePoint 2016 required for SharePoint setup. e.g. XXXX-XXXX-XXXX-XXXX "
             },
-            "defaultValue": "TY6N4-K9WD3-JD2J2-VYKTJ-GVJ2J"
+            "defaultValue": "NQGJR-63HC8-XCRQH-MYVCH-3J3QR"
         }
     },
   "variables": {
-    "spFarmAccountName": "contoso\\spsfarm",
-    "spSetupAccountName": "contoso\\spsadmin",
+    "spFarmAccountName": "rmc-cmr.ca\\spsfarm",
+    "spSetupAccountName": "rmc-cmr.ca\\spsadmin",
     "storageAccountType": "Premium_LRS",
     "adVMSize": "Standard_D2s_v3",
     "sqlVMSize": "Standard_D4s_v3",
