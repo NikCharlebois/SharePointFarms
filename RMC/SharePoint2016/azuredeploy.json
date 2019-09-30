@@ -118,18 +118,9 @@
     "spPublicIPAddressNameID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('sppublicIPAddressName'))]",
     "spPublicIPAddressNameID2": "[resourceId('Microsoft.Network/publicIPAddresses',variables('sppublicIPAddressName2'))]",
     "spPublicIPAddressNameID3": "[resourceId('Microsoft.Network/publicIPAddresses',variables('sppublicIPAddressName3'))]",
-    "lbFE": "SPLBFE",
-    "lbFE2": "SPLBFE2",
-    "lbFE3": "SPLBFE3",
-    "rpdNAT": "SPRDPNAT",
-    "rpdNAT2": "SPRDPNAT2",
-    "rpdNAT3": "SPRDPNAT3",
     "rdpPort": 3389,
     "nsgName": "[concat('SPNsg',resourceGroup().name)]",
     "nsgID": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgName'))]",
-    "sprdpNAT": "SPRDPNAT1",
-    "sprdpNAT2": "SPRDPNAT2",
-    "sprdpNAT3": "SPRDPNAT3",
     "sprdpPort": 3389,
     "spSourceDrive": "C:",
     "spSourceFolder": "SharePoint2016",
@@ -431,12 +422,6 @@
           },
           "subnetResourceId": {
             "value": "[variables('staticSubnetID')]"
-          },
-          "rdpNATRuleID": {
-            "value": "[variables('spRDPNATRuleID')]"
-          },
-          "lbBEPool": {
-            "value": "[variables('sppublicBEAddressPoolID')]"
           }
         }
       }
@@ -475,12 +460,6 @@
           },
           "subnetResourceId": {
             "value": "[variables('staticSubnetID')]"
-          },
-          "rdpNATRuleID": {
-            "value": "[variables('spRDPNATRuleID2')]"
-          },
-          "lbBEPool": {
-            "value": "[variables('sppublicBEAddressPoolID2')]"
           }
         }
       }
@@ -519,12 +498,6 @@
           },
           "subnetResourceId": {
             "value": "[variables('staticSubnetID')]"
-          },
-          "rdpNATRuleID": {
-            "value": "[variables('spRDPNATRuleID3')]"
-          },
-          "lbBEPool": {
-            "value": "[variables('sppublicBEAddressPoolID3')]"
           }
         }
       }

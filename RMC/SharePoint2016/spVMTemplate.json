@@ -80,21 +80,7 @@
             "metadata": {
                 "description": "the resource id to the subnet"
             }
-        },
-        "rdpNATRuleID": {
-            "type": "string",
-            "metadata": {
-                "description": "The resource id for the RDP NAT rule"
-            }
-        },
-
-        "lbBEPool": {
-            "type": "string",
-            "metadata": {
-                "description": "The resource id for the SharePoint load balancer back end pool"
-            }
         }
-
     },
   "variables": {
     "spNicName": "[concat('SPNic',parameters('vmName'))]",
@@ -125,17 +111,7 @@
                       "privateIPAllocationMethod": "Dynamic",
                       "subnet": {
                         "id": "[parameters('subnetResourceId')]"
-                      },
-                      "loadBalancerBackendAddressPools": [
-                        {
-                          "id": "[parameters('lbBEPool')]"
-                        }
-                      ],
-                      "loadBalancerInboundNatRules": [
-                        {
-                          "id": "[parameters('rdpNATRuleID')]"
-                        }
-                      ]
+                      }
                     }
                   }
                 ]
