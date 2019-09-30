@@ -81,8 +81,6 @@
                 "description": "the resource id to the subnet"
             }
         },
-
-
         "rdpNATRuleID": {
             "type": "string",
             "metadata": {
