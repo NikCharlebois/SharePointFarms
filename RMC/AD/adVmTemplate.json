@@ -100,7 +100,7 @@
     },
     "variables": {
         "vmvhdContainerName": "vhds",
-        "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', 'nsgadpubip')]"
+        "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', 'nsgspad')]"
     },
     "resources": [
         {
