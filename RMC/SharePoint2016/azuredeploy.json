@@ -37,14 +37,14 @@
             },
             "defaultValue": "https://nikisos.blob.core.windows.net/isos/en_sql_server_2016_enterprise_with_service_pack_1_x64_dvd_9542382.iso"
         },
-        "sharepoint2016DownloadLink": {
+        "sharepointDownloadLink": {
             "type": "string",
             "metadata": {
                 "description": "Direct download link for the SharePoint 2016 trial ISO. For example: http://download.msdn.microsoft.com/pr/en_sharepoint_server_2016_x64_dvd_3823428.iso?t=XXXXXXXXXXXXXXX"
             },
             "defaultValue": "https://download.microsoft.com/download/0/0/4/004EE264-7043-45BF-99E3-3F74ECAE13E5/officeserver.img"
         },
-        "sharepoint2016ProductKey": {
+        "sharepointProductKey": {
             "type": "string",
             "metadata": {
                 "description": "Product key for SharePoint 2016 required for SharePoint setup. e.g. XXXX-XXXX-XXXX-XXXX "
@@ -123,7 +123,7 @@
     "nsgID": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgName'))]",
     "sprdpPort": 3389,
     "spSourceDrive": "C:",
-    "spSourceFolder": "SharePoint2016",
+    "spSourceFolder": "SharePoint",
     "spconfigDatabaseName": "SP_Config",
     "spadministrationContentDatabaseName": "SP_AdminContent",
     "spcontentDatabaseName": "spFarm_Content",
@@ -616,13 +616,13 @@
             "value": "[variables('spSourceFolder')]"
           },
           "ProductKey": {
-            "value": "[parameters('sharepoint2016ProductKey')]"
+            "value": "[parameters('sharepointProductKey')]"
           },
           "assetLocation": {
             "value": "[variables('spassetLocation')]"
           },
-          "sharepoint2016SourceDLLink": {
-            "value": "[parameters('sharepoint2016DownloadLink')]"
+          "sharepointSourceDLLink": {
+            "value": "[parameters('sharepointDownloadLink')]"
           },
           "primaryAdIpAddress": {
             "value": "[variables('primaryAdIpAddress')]"
@@ -700,13 +700,13 @@
             "value": "[variables('spSourceFolder')]"
           },
           "ProductKey": {
-            "value": "[parameters('sharepoint2016ProductKey')]"
+            "value": "[parameters('sharepointProductKey')]"
           },
           "assetLocation": {
             "value": "[variables('spassetLocation')]"
           },
-          "sharepoint2016SourceDLLink": {
-            "value": "[parameters('sharepoint2016DownloadLink')]"
+          "sharepointSourceDLLink": {
+            "value": "[parameters('sharepointDownloadLink')]"
           },
           "primaryAdIpAddress": {
             "value": "[variables('primaryAdIpAddress')]"
@@ -784,13 +784,13 @@
             "value": "[variables('spSourceFolder')]"
           },
           "ProductKey": {
-            "value": "[parameters('sharepoint2016ProductKey')]"
+            "value": "[parameters('sharepointProductKey')]"
           },
           "assetLocation": {
             "value": "[variables('spassetLocation')]"
           },
-          "sharepoint2016SourceDLLink": {
-            "value": "[parameters('sharepoint2016DownloadLink')]"
+          "sharepointSourceDLLink": {
+            "value": "[parameters('sharepointDownloadLink')]"
           },
           "primaryAdIpAddress": {
             "value": "[variables('primaryAdIpAddress')]"
