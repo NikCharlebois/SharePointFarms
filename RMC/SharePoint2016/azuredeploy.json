@@ -113,8 +113,6 @@
     "publicIPAddressName": "[concat('PIP',resourceGroup().name)]",
     "publicIPAddressNameID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]",
     "rdpPort": 3389,
-    "nsgName": "[concat('SPNsg',resourceGroup().name)]",
-    "nsgID": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgName'))]",
     "sprdpPort": 3389,
     "spSourceDrive": "C:",
     "spSourceFolder": "SharePoint",
@@ -133,9 +131,6 @@
       "type": "Microsoft.Network/virtualNetworks",
       "location": "[variables('location')]",
       "apiVersion": "2015-05-01-preview",
-      "dependsOn": [
-        "[variables('nsgID')]"
-      ],
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
