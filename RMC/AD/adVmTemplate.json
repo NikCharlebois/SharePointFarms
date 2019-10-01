@@ -129,7 +129,6 @@
             "type": "Microsoft.Network/networkInterfaces",
             "location": "[resourceGroup().location]",
             "dependsOn" : [
-                "[concat('Microsoft.Network/virtualNetworks/SPVnet', resourceGroup().name)]",
                 "[concat('Microsoft.Network/publicIpAddresses/', 'spadpublicip')]"
             ],
             "apiVersion": "2018-10-01",
