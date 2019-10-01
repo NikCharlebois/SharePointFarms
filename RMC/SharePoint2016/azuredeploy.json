@@ -243,7 +243,15 @@
             "value": [
               "[variables('primaryAdIpAddress')]"
             ]
-          }
+          },
+          "subnets": [
+            {
+              "name": "[variables('staticSubnetName')]",
+              "properties": {
+                "addressPrefix": "[variables('vmNetworkSubnet')]"
+              }
+            }
+          ]
         }
       }
     },

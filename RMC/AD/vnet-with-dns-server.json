@@ -14,6 +14,12 @@
                 "description": "The address range of the VNET in CIDR format"
             }
         },
+        "subnets": {
+            "type": "array",
+            "metadata": {
+                "description": "The subnet definition for the VNET"
+            }
+        },
         "DNSServerAddress": {
             "type": "array",
             "metadata": {
@@ -37,7 +43,8 @@
                 },
                 "dhcpOptions": {
                     "dnsServers": "[parameters('DNSServerAddress')]"
-                }
+                },
+                "subnets": "[parameters('subnets')]"
             }
         }
     ]
