@@ -150,7 +150,7 @@
             "type": "Microsoft.Network/networkInterfaces",
             "location": "[resourceGroup().location]",
             "dependsOn" : [
-                "[concat('Microsoft.Network/networkSecurityGroups', 'nsgspad')]",
+                "[concat('Microsoft.Network/networkSecurityGroups/', 'nsgspad')]",
                 "[concat('Microsoft.Network/publicIpAddresses/', 'spadpublicip')]"
             ],
             "apiVersion": "2018-10-01",
