@@ -86,8 +86,8 @@
     "sqlClusterVmDeploymentID": "[concat('Microsoft.Resources/deployments/', variables('sqlClusterVmDeployment'))]",
     "adVMName": "[concat('SPAD',resourceGroup().name)]",
     "vnetwithDNSTemplateURL": "[concat(variables('adAssetLocation'),'/vnet-with-dns-server.json')]",
-    "updateVNetDNS1": "UpdateVNetDNS1",
-    "updateVNetDNS1ID": "[concat('Microsoft.Resources/deployments/', variables('updateVNetDNS1'))]",
+    "updateVNetDNS": "UpdateVNetDNS",
+    "updateVNetDNSID": "[concat('Microsoft.Resources/deployments/', variables('updateVNetDNS'))]",
     "sqlClusterVmName": "[concat('SPSQL',resourceGroup().name)]",
     "spTemplateURL": "[concat(variables('spassetLocation'),'/spVMTemplate.json')]",
     "spStorageName": "[tolower(concat('SPWFESA',resourceGroup().name))]",
@@ -220,7 +220,7 @@
       }
     },
     {
-      "name": "[variables('updateVNetDNS1')]",
+      "name": "[variables('updateVNetDNS')]",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
@@ -239,9 +239,6 @@
           "virtualNetworkAddressRange": {
             "value": "[variables('virtualNetworkAddressRange')]"
           },
-          "subnets": {
-            "value": "[variables('subnets')]"
-          },
           "dnsServerAddress": {
             "value": [
               "[variables('primaryAdIpAddress')]"
@@ -255,7 +252,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[variables('updateVNetDNS1Id')]"
+        "[variables('updateVNetDNSId')]"
       ],
       "properties": {
         "mode": "Incremental",
@@ -296,7 +293,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[variables('updateVNetDNS1Id')]"
+        "[variables('updateVNetDNSId')]"
       ],
       "properties": {
         "mode": "Incremental",
@@ -334,7 +331,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[variables('updateVNetDNS1Id')]"
+        "[variables('updateVNetDNSId')]"
       ],
       "properties": {
         "mode": "Incremental",
@@ -372,7 +369,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[variables('updateVNetDNS1Id')]"
+        "[variables('updateVNetDNSId')]"
       ],
       "properties": {
         "mode": "Incremental",
