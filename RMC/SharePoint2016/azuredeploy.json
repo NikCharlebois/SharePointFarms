@@ -146,10 +146,7 @@
           {
             "name": "[variables('staticSubnetName')]",
             "properties": {
-              "addressPrefix": "[variables('vmNetworkSubnet')]",
-              "networkSecurityGroup": {
-                "id": "[variables('nsgID')]"
-              }
+              "addressPrefix": "[variables('vmNetworkSubnet')]"
             }
           }
         ]
