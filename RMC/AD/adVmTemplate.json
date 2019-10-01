@@ -113,6 +113,18 @@
             }
         },
         {
+            "name": "spadpublicip",
+            "type": "Microsoft.Network/publicIpAddresses",
+            "apiVersion": "2019-02-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "publicIpAllocationMethod": "Dynamic"
+            },
+            "sku": {
+                "name": "Basic"
+            }
+        },
+        {
             "name": "[parameters('adDNicName')]",
             "type": "Microsoft.Network/networkInterfaces",
             "location": "[resourceGroup().location]",
@@ -157,18 +169,6 @@
                         "destinationPortRange": "3389"
                     }
                 }]
-            }
-        },
-        {
-            "name": "spadpublicip",
-            "type": "Microsoft.Network/publicIpAddresses",
-            "apiVersion": "2019-02-01",
-            "location": "[resourceGroup().location]",
-            "properties": {
-                "publicIpAllocationMethod": "Dynamic"
-            },
-            "sku": {
-                "name": "Basic"
             }
         },
         {
