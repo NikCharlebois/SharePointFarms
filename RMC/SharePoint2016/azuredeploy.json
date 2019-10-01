@@ -147,7 +147,7 @@
       "name": "[variables('adVmDeployment')]",
       "type": "Microsoft.Resources/deployments",
       "dependsOn": [
-        "[concat('Microsoft.Network/virtualNetworks/', variables('adVmDeployment'))]"
+        "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
       ],
       "apiVersion": "2015-01-01",
       "properties": {
