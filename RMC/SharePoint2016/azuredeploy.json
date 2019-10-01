@@ -110,10 +110,6 @@
     "deploySqlStandalone": "DeploySqlStandalone",
     "deploySqlStandaloneID": "[concat('Microsoft.Resources/deployments/', variables('deploySqlStandalone'))]",
     "deploySqlStandaloneTemplateURL": "[concat(variables('sqlAssetLocation'),'/deploySqlStandalone.json')]",
-    "publicIPAddressName": "[concat('PIP',resourceGroup().name)]",
-    "publicIPAddressNameID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]",
-    "rdpPort": 3389,
-    "sprdpPort": 3389,
     "spSourceDrive": "C:",
     "spSourceFolder": "SharePoint",
     "spconfigDatabaseName": "SP_Config",
@@ -130,7 +126,7 @@
       "name": "[variables('virtualNetworkName')]",
       "type": "Microsoft.Network/virtualNetworks",
       "location": "[variables('location')]",
-      "apiVersion": "2015-05-01-preview",
+      "apiVersion": "2019-04-01",
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
