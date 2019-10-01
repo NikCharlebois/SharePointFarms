@@ -112,12 +112,6 @@
     "deploySqlStandaloneTemplateURL": "[concat(variables('sqlAssetLocation'),'/deploySqlStandalone.json')]",
     "publicIPAddressName": "[concat('PIP',resourceGroup().name)]",
     "publicIPAddressNameID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]",
-    "spPublicIPAddressName": "[concat('SPWFEPIP',resourceGroup().name)]",
-    "spPublicIPAddressName2": "[concat('SPAPPPIP',resourceGroup().name)]",
-    "spPublicIPAddressName3": "[concat('SPSEARCHIP',resourceGroup().name)]",
-    "spPublicIPAddressNameID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('sppublicIPAddressName'))]",
-    "spPublicIPAddressNameID2": "[resourceId('Microsoft.Network/publicIPAddresses',variables('sppublicIPAddressName2'))]",
-    "spPublicIPAddressNameID3": "[resourceId('Microsoft.Network/publicIPAddresses',variables('sppublicIPAddressName3'))]",
     "rdpPort": 3389,
     "nsgName": "[concat('SPNsg',resourceGroup().name)]",
     "nsgID": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgName'))]",
@@ -131,43 +125,9 @@
     "sharepointFarmName": "spFarm",
     "spFQDN": "[concat(variables('spVmName'),'.',parameters('domainName'))]",
     "spFQDN2": "[concat(variables('spVmName2'),'.',parameters('domainName'))]",
-    "spFQDN3": "[concat(variables('spVmName3'),'.',parameters('domainName'))]",
-    "subnets": [
-      {
-        "name": "[variables('staticSubnetName')]",
-        "properties": {
-          "addressPrefix": "[variables('vmNetworkSubnet')]",
-          "networkSecurityGroup": {
-            "id": "[variables('nsgID')]"
-          }
-        }
-      }
-    ]
+    "spFQDN3": "[concat(variables('spVmName3'),'.',parameters('domainName'))]"
   },
   "resources": [
-    {
-      "apiVersion": "2015-05-01-preview",
-      "type": "Microsoft.Network/networkSecurityGroups",
-      "name": "[variables('nsgName')]",
-      "location": "[variables('location')]",
-      "properties": {
-        "securityRules": [
-          {
-            "name": "rule1",
-            "properties": {
-              "protocol": "*",
-              "sourcePortRange": "*",
-              "destinationPortRange": "*",
-              "sourceAddressPrefix": "*",
-              "destinationAddressPrefix": "*",
-              "access": "Allow",
-              "priority": 101,
-              "direction": "Inbound"
-            }
-          }
-        ]
-      }
-    },
     {
       "name": "[variables('virtualNetworkName')]",
       "type": "Microsoft.Network/virtualNetworks",
@@ -193,54 +153,6 @@
             }
           }
         ]
-      }
-    },
-    {
-      "apiVersion": "2015-05-01-preview",
-      "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('publicIPAddressName')]",
-      "location": "[variables('location')]",
-      "dependsOn": [
-        "[variables('vnetID')]"
-      ],
-      "properties": {
-        "publicIPAllocationMethod": "Dynamic"
-      }
-    },
-    {
-      "apiVersion": "2015-05-01-preview",
-      "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('spPublicIPAddressName')]",
-      "location": "[variables('location')]",
-      "dependsOn": [
-        "[variables('vnetID')]"
-      ],
-      "properties": {
-        "publicIPAllocationMethod": "Dynamic"
-      }
-    },
-    {
-      "apiVersion": "2015-05-01-preview",
-      "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('spPublicIPAddressName2')]",
-      "location": "[variables('location')]",
-      "dependsOn": [
-        "[variables('vnetID')]"
-      ],
-      "properties": {
-        "publicIPAllocationMethod": "Dynamic"
-      }
-    },
-    {
-      "apiVersion": "2015-05-01-preview",
-      "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('spPublicIPAddressName3')]",
-      "location": "[variables('location')]",
-      "dependsOn": [
-        "[variables('vnetID')]"
-      ],
-      "properties": {
-        "publicIPAllocationMethod": "Dynamic"
       }
     },
     {
