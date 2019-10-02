@@ -119,7 +119,15 @@
     "sharepointFarmName": "spFarm",
     "spFQDN": "[concat(variables('spVmName'),'.',parameters('domainName'))]",
     "spFQDN2": "[concat(variables('spVmName2'),'.',parameters('domainName'))]",
-    "spFQDN3": "[concat(variables('spVmName3'),'.',parameters('domainName'))]"
+    "spFQDN3": "[concat(variables('spVmName3'),'.',parameters('domainName'))]",
+    "subnets": [
+      {
+        "name": "[variables('staticSubnetName')]",
+        "properties": {
+          "addressPrefix": "[variables('vmNetworkSubnet')]"
+        }
+      }
+    ]
   },
   "resources": [
     {
@@ -133,14 +141,7 @@
             "[variables('virtualNetworkAddressRange')]"
           ]
         },
-        "subnets": [
-          {
-            "name": "[variables('staticSubnetName')]",
-            "properties": {
-              "addressPrefix": "[variables('vmNetworkSubnet')]"
-            }
-          }
-        ]
+        "subnets": "[variables('subnets')]"
       }
     },
     {
@@ -244,14 +245,9 @@
               "[variables('primaryAdIpAddress')]"
             ]
           },
-          "subnets": [
-            {
-              "name": "[variables('staticSubnetName')]",
-              "properties": {
-                "addressPrefix": "[variables('vmNetworkSubnet')]"
-              }
-            }
-          ]
+          "subnets": {
+            "value": "[variables('subnets')]"
+          }
         }
       }
     },
