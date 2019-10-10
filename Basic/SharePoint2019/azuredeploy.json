@@ -43,13 +43,6 @@
                 "description": "Direct download link for the SharePoint 2019 trial ISO. For example: http://download.msdn.microsoft.com/pr/en_sharepoint_server_2016_x64_dvd_3823428.iso?t=XXXXXXXXXXXXXXX"
             },
             "defaultValue": "https://download.microsoft.com/download/C/B/A/CBA01793-1C8A-4671-BE0D-38C9E5BBD0E9/officeserver.img"
-        },
-        "sharepointProductKey": {
-            "type": "string",
-            "metadata": {
-                "description": "Product key for SharePoint 2019 required for SharePoint setup. e.g. XXXX-XXXX-XXXX-XXXX "
-            },
-            "defaultValue": "M692G-8N2JP-GG8B2-2W2P7-YY7J6"
         }
     },
   "variables": {
@@ -519,9 +512,6 @@
           "sharepointInstallSourceFolder": {
             "value": "[variables('spSourceFolder')]"
           },
-          "ProductKey": {
-            "value": "[parameters('sharepointProductKey')]"
-          },
           "assetLocation": {
             "value": "[variables('spassetLocation')]"
           },
@@ -603,9 +593,6 @@
           "sharepointInstallSourceFolder": {
             "value": "[variables('spSourceFolder')]"
           },
-          "ProductKey": {
-            "value": "[parameters('sharepointProductKey')]"
-          },
           "assetLocation": {
             "value": "[variables('spassetLocation')]"
           },
@@ -686,9 +673,6 @@
           },
           "sharepointInstallSourceFolder": {
             "value": "[variables('spSourceFolder')]"
-          },
-          "ProductKey": {
-            "value": "[parameters('sharepointProductKey')]"
           },
           "assetLocation": {
             "value": "[variables('spassetLocation')]"
