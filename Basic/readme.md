@@ -1,3 +1,3 @@
-<p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%20%20github.com%20NikCharlebois%20SharePointFarms%20raw%20master%20Basic%20SharePoint2019%20azuredeploy.json"><img src="http://azuredeploy.net/deploybutton.png" alt="Deploy Environment in Azure" /></a>
+<p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FNikCharlebois%2FSharePointFarms%2Fmaster%2FBasic%2FSharePoint2019%2Fazuredeploy.json"><img src="http://azuredeploy.net/deploybutton.png" alt="Deploy Environment in Azure" /></a>
   
 
