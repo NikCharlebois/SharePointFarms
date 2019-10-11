@@ -6,7 +6,7 @@
     $CredsSPSetup = Get-Credential -Message "Setup Account" -UserName "contoso\sp_setup"
     $CredsSPFarm  = Get-Credential -Message "Farm Account"  -UserName "contoso\sp_Farm"
     #endregion
-    Node SPWFEFound
+    Node SPWFE
     {
         SPInstallPrereqs Prerequisites
         {
@@ -30,14 +30,14 @@
             RunCentralAdmin          = $true
             FarmConfigDatabaseName   = "WSS_Config"          
             AdminContentDatabaseName = "WSS_Admin"
-            DatabaseServer           = "SPSQLFound"
+            DatabaseServer           = "SPSQL"
             FarmAccount              = $CredsSPFarm
             PassPhrase               = $CredsSPSetup
             PsDscRunAsCredential     = $CredsSPSetup
         }
     }
 
-    Node SPAPPFound
+    Node SPAPP
     {
         SPInstallPrereqs Prerequisites
         {
@@ -58,7 +58,7 @@
         WaitForAny WFECreatedFarm
         {
             ResourceName     = "[SPFarm]CreateFarm"
-            NodeName         = "SPWFEFound"
+            NodeName         = "SPWFE"
             RetryIntervalSec = 60
             RetryCount       = 15
         }
@@ -69,14 +69,14 @@
             RunCentralAdmin          = $False
             FarmConfigDatabaseName   = "WSS_Config"          
             AdminContentDatabaseName = "WSS_Admin"
-            DatabaseServer           = "SPSQLFound"
+            DatabaseServer           = "SPSQL"
             FarmAccount              = $CredsSPFarm
             PassPhrase               = $CredsSPSetup
             PsDscRunAsCredential     = $CredsSPSetup
         }
     }
 
-    Node SPSearchFound
+    Node SPSearch
     {
         SPInstallPrereqs Prerequisites
         {
@@ -97,7 +97,7 @@
         WaitForAny WFECreatedFarm
         {
             ResourceName     = "[SPFarm]CreateFarm"
-            NodeName         = "SPWFEFound"
+            NodeName         = "SPWFE"
             RetryIntervalSec = 60
             RetryCount       = 15
         }
@@ -108,7 +108,7 @@
             RunCentralAdmin          = $False
             FarmConfigDatabaseName   = "WSS_Config"          
             AdminContentDatabaseName = "WSS_Admin"
-            DatabaseServer           = "SPSQLFound"
+            DatabaseServer           = "SPSQL"
             FarmAccount              = $CredsSPFarm
             PassPhrase               = $CredsSPSetup
             PsDscRunAsCredential     = $CredsSPSetup
@@ -119,15 +119,15 @@
 $settings = @{
     AllNodes = @(
         @{
-            NodeName = "SPWFEFound"
+            NodeName = "SPWFE"
             PsDscAllowPlaintextPassword = $true
         },
         @{
-            NodeName = "SPAPPFound"
+            NodeName = "SPAPP"
             PsDscAllowPlaintextPassword = $true
         },
         @{
-            NodeName = "SPSearchFound"
+            NodeName = "SPSearch"
             PsDscAllowPlaintextPassword = $true
         }
     )
