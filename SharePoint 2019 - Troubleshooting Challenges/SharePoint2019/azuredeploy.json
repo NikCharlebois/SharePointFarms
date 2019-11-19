@@ -508,6 +508,9 @@
           },
           "primaryAdIpAddress": {
             "value": "[variables('primaryAdIpAddress')]"
+          },
+          "configName": {
+            "value": "WFE"
           }
         }
       }
@@ -589,6 +592,9 @@
           },
           "primaryAdIpAddress": {
             "value": "[variables('primaryAdIpAddress')]"
+          },
+          "configName": {
+            "value": "App"
           }
         }
       }
@@ -670,6 +676,9 @@
           },
           "primaryAdIpAddress": {
             "value": "[variables('primaryAdIpAddress')]"
+          },
+          "configName": {
+            "value": "Search"
           }
         }
       }
